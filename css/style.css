@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #d8dbd3;
+    padding: 2% 0;
+    overflow: hidden;
+  }
+  
+  /* BACKGROUND */
+  #green-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #089a8b;
+    min-height: 100px;
+    z-index: 500;
+  }
+  
+  
+  /* APP */
+  #app-container {
+    width: 80%;
+    height: 90vh;
+    margin: 0 auto;
+    background-color: lightblue;
+    z-index: 900;
+    position: relative;
+  } 
+
+
+#app-container::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#app-left, #app-right {
+  float: left;
+  height: 100%;
+}
+
+#app-left {
+  width: 30%;
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+}
+
+#app-right {
+  width: 70%;
+  background-color: lightgreen;
+} 
+
+/* APP LEFT */
+#app-left .notifications,
+#app-left .search-box,
+#app-left .recent-chat {
+    background: lightseagreen;
+    /* debug */
+    height: calc(100% / 3);
+  }
+
+  #app-left .user-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* USER PROFILE */
+  .user-profile > .left,
+  .user-profile > .right {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+  }
+  .left .profile-pic {
+    flex-basis: 20%;
+  }
+  .left .profile-pic img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  .left > .username {
+    flex-basis: 80%;
+    margin-left: 10px;
+  }
+  .user-profile > .right {
+    justify-content: flex-end;
+  }
+  .user-profile > .right > .fas {
+    margin: 0 15px;
+    color: grey;
+    font-size: 20px;
+  }

@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font-awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<!-- CSS Custom-->
+<link rel="stylesheet" href="css/style.css">
+
+
+<title>Vue Boolzapp</title>
+
+<!--     Milestone 1
+Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
+Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+-->
+<body>
+    <div class="container">
+
+        <!-- GREEN BAR -->
+        <div id="green-bar"></div>
+
+        <!-- APP -->
+        <div id="app-container">
+            <!-- LEFT SIDE -->
+            <div id="app-left">
+
+            <!-- USER PROFILE BAR -->
+        <div class="user-profile">
+
+            <div class="left">
+            <div class="profile-pic">
+                <img src="img/avatar_io.jpg" alt="">
+            </div>
+            <div class="username"><h4>Nome Utente</h4></div>
+            </div>
+
+            <div class="right">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+
+        </div>
+
+        <div class="notifications">notifications</div>
+        <div class="search-box">search-box</div>
+        <div class="recent-chat">recent-chat</div>
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div id="app-right">
+        <div class="user-profile">user-profile</div>
+        <div class="current-chat"></div>
+        </div>
+
+    </div>
+</body>
+</html> 

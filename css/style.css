@@ -143,7 +143,7 @@ body {
 
 
 .text-disclaimer {
-  
+
 }
 
 .sub-disclaimer {
@@ -193,6 +193,10 @@ body {
   align-items: flex-start;
   padding: 10px;
   border-bottom: 1px solid var(--border-color) ;
+}
+
+.contact--active {
+  background-color: var(--contact-active);
 }
 
 .contact__avatar {
@@ -256,7 +260,8 @@ body {
   min-width: 250px;
   max-width: 60%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px;
+  margin: 5px;
 }
 
 .message--sent .message__box {

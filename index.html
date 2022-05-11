@@ -58,21 +58,26 @@
 
       <!-- Contact section -->
       <section class="contacts">
-        <div class="contact">
+
+        <div 
+         v-for="(element, index) in contacts"
+         class="contact"
+         :class="currentContact === index ? 'contact--active' : ''" @click="clickChat(index)">
           <div class="contact__avatar">
-            <img src="img/avatar_1.jpg" alt="Michele">
+            <img :src="'img/avatar' + element.avatar + '.jpg'" 
+            :alt="element.name">
           </div>
 
           <div class="contact__text">
             <div class="contact__main-text">
               <h3>
-                Michele
+                {{ element.name}}
               </h3>
-              <p>15:00</p>
+              <p>{{element.messages[element.messages.length - 1].date}}</p>
             </div>
-            <small>Ultimo messaggio inviato</small>
+            <small>{{element.messages[element.messages.length - 1].message}}</small>
           </div>
-      </div>
+        </div>
       </section>
       <!-- /Contact section -->
 
@@ -84,10 +89,13 @@
       <!-- Header -->
       <header class="col-header"> 
         <div class="col-header__avatar">
-          <img src="img/avatar_1.jpg" alt="">
+          <img 
+            :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'"
+            alt=""
+          >
           <div class="col-header__text">
-            <h3>Michele</h3>
-            <small>Ultimo accesso oggi alle 15:00</small>
+            <h3>{{ contacts[currentContact].name }}</h3>
+            <small>{{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}}</small>
           </div>
         </div>
         <div class="col-header__actions">
@@ -101,7 +109,7 @@
       <!-- Messages -->
       <section class="messages">
         <!-- item message -->
-        <div class="message message--sent">
+        <!-- <div class="message message--sent">
           <div class="message__box">
             <div class="message__text">
               Hai cucinato?
@@ -110,10 +118,18 @@
               15:00
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- /item message -->
-
-        <div class="messsage message--received">
+        <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'message message--sent' : 'message message--received'">
+          <div class="message__box">
+            <div class="message__text">
+              {{ item.message}}
+            </div>
+            <div class="message__time">
+              {{item.date}}
+            </div>
+          </div>
+        <!-- <div class="messsage message--received">
           <div class="message__box">
             <div class="message__text">
               No
@@ -122,7 +138,7 @@
               15:00
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <!-- /Messages -->

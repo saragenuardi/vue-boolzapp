@@ -164,12 +164,24 @@ const app = new Vue ({
                 ],
             }
         ],
-        currentContact: 0
+        currentContact: 0,
+        addInputText: ""
+        
     },
 
     methods: {
         clickChat: function (index) {
             this.currentContact = index
+        },
+        addInputMessage: function() {
+            const userMessage = {
+                date: '10/01/2020 15:51:00',
+                message: this.addInputText,
+                status: 'sent'
+            }
+    
+            this.contacts[this.currentContact].messages.push(userMessage);
+            this.addInputText = "";
         }
     }
 });
